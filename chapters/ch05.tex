@@ -46,7 +46,7 @@ It often requires explicit synchronization when threads later depend on results 
 
 Consider a parallel region where every thread needs to know the total number of threads in the team.
 The value of \texttt{numt} denotes the number of threads in the \emph{current} OpenMP team.
- For a given parallel region, this value is fixed for the lifetime of that region, so it is wasteful to have every thread redundantly write it. In Program~\ref{prog:tid-read}, we avoid redundant writes by allowing only a particular thread (here, \texttt{tid==0}) to assign \texttt{numt}.
+ For a given parallel region, this value is fixed for the lifetime of that region, so it is wasteful to have every thread redundantly write it. 
 \begin{ppprogram}{Reading the value of \texttt{numt}}{prog:tid-read}
 \begin{lstlisting}[language=OpenMP]
 #include <omp.h>
